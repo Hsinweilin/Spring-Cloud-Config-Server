@@ -1,20 +1,20 @@
 spring:
   application:
-    name: eureka-server
+    name: eureka-server2
   boot:
     admin:
       context-path: /admin
 server:
-  port: 8070
+  port: 8069
 eureka:
   instance:
-    hostname: eurekaserver
+    hostname: eurekaserver2
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
       defaultZone: 
-        - http://eurekaserver2:8069/eureka/ # connect to eurekaserver2
+        - http://eurekaserver:8070/eureka/ # connect to eurekaserver
         - http://eurekaserver3:8068/eureka/ # connect to eurekaserver3
   server:
     waitTimeInMsWhenSyncEmpty: 5
