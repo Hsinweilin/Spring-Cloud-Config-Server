@@ -16,6 +16,8 @@ eureka:
       defaultZone: [http://eurekaserver2:8069/eureka/, http://eurekaserver3:8068/eureka/]
   server:
     waitTimeInMsWhenSyncEmpty: 5
+    enableSelfPreservation: true
+    peerNodeConnectTimeoutMs: 10000 # Example: 10 seconds
       
       
 management:
