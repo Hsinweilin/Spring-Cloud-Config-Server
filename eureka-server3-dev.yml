@@ -13,9 +13,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: 
-        - http://eurekaserver:8070/eureka/ # connect to eurekaserver
-        - http://eurekaserver2:8069/eureka/ # connect to eurekaserver2
+      defaultZone: [http://eurekaserver2:8069/eureka/, http://eurekaserver:8070/eureka/]
   server:
     waitTimeInMsWhenSyncEmpty: 5
       
