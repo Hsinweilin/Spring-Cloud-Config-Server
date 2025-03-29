@@ -39,14 +39,14 @@ spring:
           - Path=/google/**  # Match any path starting with /google/
         filters:
           - RewritePath=/google/(?<path>.*), /$\{path}  # Keep the rest of the path after /google
-          - SetStatus=200  # Set the status to 200, which disables any automatic redirects
+          - SetStatus=200 
       - id: arizona-route
         uri: https://www.arizona.edu  # Route directly to arizona.edu
         predicates:
           - Path=/arizona/**  # Match any path starting with /arizona/
         filters:
           - RewritePath=/arizona/(?<path>.*), /$\{path}  # Remove the /arizona part from the path
-          - SetStatus=200  # Set status 200, ignoring redirects if any from arizona.edu
+          - SetStatus=200
 
 
 
