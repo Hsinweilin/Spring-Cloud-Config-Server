@@ -55,6 +55,6 @@ management:
   endpoints:
     web:
       exposure:
-        include: gateway,refresh
+        include: "gateway"
         
         
