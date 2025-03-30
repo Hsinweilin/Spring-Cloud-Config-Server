@@ -40,13 +40,13 @@ spring:
         filters:
           - RewritePath=/google/(?<path>.*), /$\{path}  # Keep the rest of the path after /google
           - SetStatus=200 
-      - id: arizona-route
-        uri: https://www.arizona.edu  # Route directly to arizona.edu
-        predicates:
-          - Path=/arizona/**  # Match any path starting with /arizona/
-        filters:
-          - RewritePath=/arizona/(?<path>.*), /$\{path}  # Remove the /arizona part from the path
-          - SetStatus=200
+      # - id: arizona-route
+      #   uri: https://www.arizona.edu  # Route directly to arizona.edu
+      #   predicates:
+      #     - Path=/arizona/**  # Match any path starting with /arizona/
+      #   filters:
+      #     - RewritePath=/arizona/(?<path>.*), /$\{path}  # Remove the /arizona part from the path
+      #     - SetStatus=200
  
 management:
   endpoint:
