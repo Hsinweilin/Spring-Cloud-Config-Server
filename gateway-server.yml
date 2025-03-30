@@ -47,17 +47,14 @@ spring:
         filters:
           - RewritePath=/arizona/(?<path>.*), /$\{path}  # Remove the /arizona part from the path
           - SetStatus=200
-
-
-
-       
+ 
 management:
   endpoint:
     gateway:
-      enabled: true   
+      enabled: true
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: gateway,refresh
         
         
