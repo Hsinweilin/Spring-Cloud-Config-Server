@@ -19,34 +19,6 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-      routes:
-      - id: organization-service
-        uri: lb://organization-service
-        predicates:
-        - Path=/organization/**
-        filters:
-        - RewritePath=/organization/(?<path>.*), /$\{path}
-      - id: licensing-service
-        uri: lb://licensing-service
-        predicates:
-        - Path=/license/**
-        filters:
-        - RewritePath=/license/(?<path>.*), /$\{path}  
-        # New Route to Google
-      - id: google-route
-        uri: https://www.google.com  # Directing to google.com
-        predicates:
-          - Path=/google/**  # Match any path starting with /google/
-        filters:
-          - RewritePath=/google/(?<path>.*), /$\{path}  # Keep the rest of the path after /google
-          - SetStatus=200 
-      - id: arizona-route
-        uri: https://www.arizona.edu  # Route directly to arizona.edu
-        predicates:
-          - Path=/arizona/**  # Match any path starting with /arizona/
-        filters:
-          - RewritePath=/arizona/(?<path>.*), /$\{path}  # Remove the /arizona part from the path
-          - SetStatus=200
  
 management:
   endpoint:
